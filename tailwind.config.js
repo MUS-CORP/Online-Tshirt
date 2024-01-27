@@ -9,6 +9,9 @@ module.exports = {
         center: true,
         padding: "2rem",
       },
+      colors: {
+        customBlue: '#40A2D8',
+      },
     },
   },
   plugins: [

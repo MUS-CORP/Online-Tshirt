@@ -1,122 +1,46 @@
 <template>
   <section id="secition2" class="relative mb-90">
-    <div
-      ref="elementKotak"
-      class="flex flex-col border border-gray-200 shadow-sm rounded-xl p-4 md:p-5 left-9 w-10 h-100 absolute bg-blue-600"
-    ></div>
+    <div class="container my-64">
+      <div
+        ref="elementKotak"
+        class="flex flex-col border border-gray-200 shadow-sm rounded-xl py-64 md:p-5 left-9 w-10 h-100 absolute bg-blue-600"
+      ></div>
 
-    <div class="container mb-5">
-      <div class="text-5xl text-center mb-10">
-        <span class="font-bold px-5 border-t border-cyan-700">New</span
-        ><span>T-shirt</span>
-      </div>
-
-      <div class="grid grid-cols-3 gap-x-5">
-        <div
-          class="flex flex-col relative overflow-hidden group hover:shadow-2xl delay-150"
-        >
-          <a
-            class="group-hover:blur-sm group-hover:shadow-lg group-hover:transition delay-150 duration-300 bg-white border shadow-sm rounded-xl"
-            href="#"
-          >
-            <div class="aspect-w-16 aspect-h-9">
-              <img
-                class="object-cover rounded-t-xl"
-                src="/assets/images/stock11.avif"
-                alt="Image Description"
-              />
-            </div>
-            <div class="p-4 md:p-5">
-              <h3 class="text-lg font-bold text-gray-800">Djack T-shirt</h3>
-              <p class="mt-5 text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consequatur, maiores!
-              </p>
-              <span class="mt-5 text-black text-lg">Rp 200,000.00</span>
-            </div>
-          </a>
-          <div
-            class="w-full absolute flex items-center h-screen justify-center opacity-0 group-hover:backdrop-blur group-hover:opacity-100 group-hover:blur-none transition-opacity duration-300"
-          >
-            <a
-              href=""
-              class="py-3 px-4 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700"
+      <div
+        class="flex flex-col bg-blue-600 border mb-40 py-20 px-32 border-gray-200 shadow-sm rounded-2xl"
+      >
+        <div class="grid grid-cols-2">
+          <div class="flex flex-col gap-y-10 justify-center h-100">
+            <span class="font-bold text-4xl mb-5 text-white"
+              >Do you have a new question?</span
             >
-              Lihat Detail
-            </a>
+            <span class="text-white text-xl flex justify-items-center"
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+              omnis dolor fugiat cum doloribus amet eum nemo aspernatur ea
+              consequatur.</span
+            >
+            <div class="flex justify-start items-start">
+              <button
+                type="button"
+                class="py-5 px-8 text-md font-semibold rounded-lg border border-transparent bg-white text-black hover:scale-75 transition duration-300 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+              >
+                Get Started
+              </button>
+            </div>
           </div>
-        </div>
-        <div
-          class="flex flex-col relative overflow-hidden group hover:shadow-2xl delay-150"
-        >
-          <a
-            class="group-hover:blur-sm group-hover:shadow-lg group-hover:transition delay-150 duration-300 bg-white border shadow-sm rounded-xl"
-            href="#"
-          >
+          <div class="" ref="promotionImage">
             <img
-              class="w-full rounded-t-xl"
-              src="/assets/images/stock11.avif"
-              alt="Image Description"
+              class="flex justify-items-center ml-auto px w-72 hover:rotate-180 hover:-scale-x-105 transition duration-500 -rotate-6"
+              src="/assets/images/promotionImage.png"
+              alt=""
             />
-            <div class="p-4 md:p-5">
-              <h3 class="text-lg font-bold text-gray-800">Rel T-shirt</h3>
-              <p class="mt-5 text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consequatur, maiores!
-              </p>
-              <span class="mt-5 text-black text-lg">Rp 200,000.00</span>
-            </div>
-          </a>
-          <div
-            class="w-full absolute flex items-center h-screen justify-center opacity-0 group-hover:backdrop-blur group-hover:opacity-100 group-hover:blur-none transition-opacity duration-300"
-          >
-            <a
-              href=""
-              class="py-3 px-4 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700"
-            >
-              Lihat Detail
-            </a>
           </div>
         </div>
-        <div
-          class="flex flex-col relative overflow-hidden group hover:shadow-2xl delay-150"
-        >
-          <a
-            class="group-hover:blur-sm group-hover:shadow-lg group-hover:transition delay-150 duration-300 bg-white border shadow-sm rounded-xl"
-            href="#"
-          >
-            <div class="aspect-w-16 aspect-h-9">
-              <img
-                class="object-cover rounded-t-xl"
-                src="/assets/images/stock22.avif"
-                alt="Image Description"
-              />
-            </div>
-            <div class="p-4 md:p-5">
-              <h3 class="text-lg font-bold text-gray-800">Raar T-shirt</h3>
-              <p class="mt-5 text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consequatur, maiores!
-              </p>
-              <span class="mt-5 text-black text-lg">Rp 200,000.00</span>
-            </div>
-          </a>
-          <div
-            class="w-full absolute flex items-center h-screen justify-center opacity-0 group-hover:backdrop-blur group-hover:opacity-100 group-hover:blur-none transition-opacity duration-300"
-          >
-            <a
-              href=""
-              class="py-3 px-4 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700"
-            >
-              Lihat Detail
-            </a>
-          </div>
-        </div>
-        <div
-          ref="elementKotak2"
-          class="flex flex-col border border-gray-200 shadow-sm rounded-xl top-1/4 right-20 md:p-5 w-10 h-200 absolute bg-blue-600"
-        ></div>
       </div>
+      <div
+        ref="elementKotak2"
+        class="flex flex-col border border-gray-200 shadow-sm rounded-xl py-64 md:p-5 right-10 bottom-9 w-10 absolute bg-blue-600"
+      ></div>
     </div>
   </section>
 </template>
@@ -131,6 +55,7 @@ export default {
 
     this.setupAnimation(this.$refs.elementKotak);
     this.setupAnimation(this.$refs.elementKotak2);
+    this.setupAnimationPromotionImage(this.$refs.promotionImage);
   },
   methods: {
     setupAnimation(value) {
@@ -144,6 +69,19 @@ export default {
         .to(value, {
           duration: 1,
           rotation: 360,
+        });
+    },
+    setupAnimationPromotionImage(value) {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            scrub: 2,
+            trigger: value,
+          },
+        })
+        .to(value, {
+          duration: 1,
+          scale: 1.2,
         });
     },
   },
