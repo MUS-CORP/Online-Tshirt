@@ -1,11 +1,10 @@
 <template>
   <section id="secition2" class="relative mb-90">
+    <div
+      ref="elementKotak"
+      class="flex flex-col border border-gray-200 shadow-sm rounded-xl py-64 md:p-5 -top-64 left-9 w-10 h-100 absolute bg-blue-600"
+    ></div>
     <div class="container my-64">
-      <div
-        ref="elementKotak"
-        class="flex flex-col border border-gray-200 shadow-sm rounded-xl py-64 md:p-5 left-9 w-10 h-100 absolute bg-blue-600"
-      ></div>
-
       <div
         class="flex flex-col bg-blue-600 border mb-40 py-20 px-32 border-gray-200 shadow-sm rounded-2xl"
       >
@@ -39,7 +38,7 @@
       </div>
       <div
         ref="elementKotak2"
-        class="flex flex-col border border-gray-200 shadow-sm rounded-xl py-64 md:p-5 right-10 bottom-9 w-10 absolute bg-blue-600"
+        class="flex flex-col border border-gray-200 shadow-sm rounded-xl py-64 md:p-5 right-10 -bottom-48 w-10 absolute bg-blue-600"
       ></div>
     </div>
   </section>

@@ -2,17 +2,13 @@
 import Database from '@ioc:Adonis/Lucid/Database'
 import Post from 'App/Models/Post';
 import View from '@ioc:Adonis/Core/View'
-export default class PostsController {
-  public async index({view} ) {
+export default class PostBajuController {  
+  public async GetDataBaju({response} ) {
     const posts = await Database
     .query()
     .from('posts')
     .select('*')
-
-    return await View.render('welcome', {
-      posts: posts
-    })
-
+    return response.json([posts]);
   }
   
   public async create({view}) {
@@ -23,6 +19,7 @@ export default class PostsController {
     return view.render('Post.show',{dataPost: dataPost});
   }
   public async store({request, session, response}) {
+
     await Database
       .insertQuery() 
       .table('posts')
@@ -51,4 +48,4 @@ export default class PostsController {
   }
 }
 
-module.exports = PostsController;
+module.exports = PostBajuController;

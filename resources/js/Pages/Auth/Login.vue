@@ -1,8 +1,11 @@
 <template>
   <div class="flex h-screen flex-col justify-center px-6 py-64 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-      <a class="font-semibold text-black" href="#" aria-label="Brand"
-        ><img class="h-auto" src="/assets/images/MUSTORE.png" alt=""
+      <a
+        class="flex justify-center font-semibold text-black"
+        href="#"
+        aria-label="Brand"
+        ><img class="h-auto w-36" src="/assets/images/MUSTORE.png" alt=""
       /></a>
       <h2
         class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900"
@@ -70,10 +73,10 @@
 
       <p class="mt-10 text-center text-sm text-gray-500">
         Belum mempunyai akun?
-        <Link
+        <inertia-link
           href="/register"
           class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
-          >Registrasi disini</Link
+          >Registrasi disini</inertia-link
         >
       </p>
     </div>
@@ -81,10 +84,7 @@
 </template>
 
 <script>
-import { Link } from "@inertiajs/vue3";
 export default {
-  components: {
-    Link,
-  },
+  components: {},
 };
 </script>

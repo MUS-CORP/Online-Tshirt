@@ -2,7 +2,7 @@
   <section id="home" class="relative">
     <div
       ref="elementKotak4"
-      class="flex flex-col border border-gray-200 shadow-sm rounded-xl top-56 left-20 md:p-5 w-10 h-100 absolute bg-blue-600"
+      class="flex flex-col border border-gray-200 shadow-sm rounded-xl top-10 left-20 md:p-5 w-10 h-100 absolute bg-blue-600"
     ></div>
     <div
       class="m-5 bg-red-400 border-radius=34% 66% 33% 67% / 55% 3% 97% 45%"

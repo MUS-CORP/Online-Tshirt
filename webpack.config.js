@@ -95,7 +95,8 @@ Encore.disableSingleRuntimeChunk()
 | will ensure that all unused files from the previous build are removed.
 |
 */
-Encore.cleanupOutputBeforeBuild()
+//matikan ini biar asset tidak ke hapus saat npm run dev
+// Encore.cleanupOutputBeforeBuild()
 
 /*
 |--------------------------------------------------------------------------

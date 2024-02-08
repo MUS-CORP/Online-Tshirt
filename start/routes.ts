@@ -23,6 +23,7 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.get('/', async ({ inertia }) => {
   return inertia.render('Home')
 })
+Route.get('/api/GetDataBaju', 'PostBajuController.GetDataBaju');
 Route.get('/welcome', async ({ view }) => {
   return view.render('welcome')
 })

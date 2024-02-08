@@ -42,6 +42,7 @@
     "@adonisjs/session": "^6.4.0",
     "@adonisjs/shield": "^7.1.1",
     "@adonisjs/view": "^6.2.0",
+    "@adonisjs/vite": "^2.0.2",
     "@eidellev/inertia-adonisjs": "^8.1.0",
     "@inertiajs/vue3": "^1.0.14",
     "@vue/server-renderer": "^3.4.15",

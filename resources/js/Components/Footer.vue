@@ -11,9 +11,8 @@
               class="flex-none font-semibold text-black"
               href="#"
               aria-label="Brand"
-              ><img class="w-48 h-auto" src="/assets/images/MUSTORE.png" alt=""
+              ><img class="w-36 h-auto" src="/assets/images/MUSTORE.png" alt=""
             /></a>
-            >
           </div>
           <!-- End Col -->
 

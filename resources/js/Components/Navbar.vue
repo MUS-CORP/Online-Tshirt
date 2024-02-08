@@ -10,7 +10,7 @@
           class="flex-none font-semibold text-black"
           href="#"
           aria-label="Brand"
-          ><img class="w-48 h-auto" src="/assets/images/MUSTORE.png" alt=""
+          ><img class="w-28 h-auto" src="/assets/images/MUSTORE.png" alt=""
         /></a>
         <div class="sm:hidden">
           <button
@@ -70,11 +70,11 @@
             >
             <a
               class="font-medium text-black/[.8] hover:text-black sm:py-6"
-              href="#"
+              href="#secition2"
               >Product</a
             >
           </div>
-          <Link
+          <inertia-link
             href="/login"
             class="flex text-xl items-center gap-x-2 font-medium text-black/[.8] hover:text-black sm:border-white/[.3] sm:my-6 sm:ps-6"
           >
@@ -94,7 +94,7 @@
               <circle cx="12" cy="7" r="4" />
             </svg>
             Log in
-          </Link>
+          </inertia-link>
         </div>
       </div>
     </nav>
@@ -102,10 +102,7 @@
 </template>
 
 <script>
-import { Link } from "@inertiajs/vue3";
 export default {
-  components: {
-    Link,
-  },
+  components: {},
 };
 </script>

@@ -12,9 +12,7 @@
       </div>
 
       <div class="grid grid-cols-3 gap-x-5">
-        <div
-          class="flex flex-col relative overflow-hidden group hover:shadow-2xl delay-150"
-        >
+        <div class="flex flex-col relative overflow-hidden group">
           <a
             class="group-hover:blur-sm group-hover:shadow-lg group-hover:transition delay-150 duration-300 bg-white border shadow-sm rounded-xl"
             href="#"
@@ -46,9 +44,7 @@
             </a>
           </div>
         </div>
-        <div
-          class="flex flex-col relative overflow-hidden group hover:shadow-2xl delay-150"
-        >
+        <div class="flex flex-col relative overflow-hidden group">
           <a
             class="group-hover:blur-sm group-hover:shadow-lg group-hover:transition delay-150 duration-300 bg-white border shadow-sm rounded-xl"
             href="#"
@@ -78,9 +74,7 @@
             </a>
           </div>
         </div>
-        <div
-          class="flex flex-col relative overflow-hidden group hover:shadow-2xl delay-150"
-        >
+        <div class="flex flex-col relative overflow-hidden group">
           <a
             class="group-hover:blur-sm group-hover:shadow-lg group-hover:transition delay-150 duration-300 bg-white border shadow-sm rounded-xl"
             href="#"
@@ -114,7 +108,7 @@
         </div>
         <div
           ref="elementKotak2"
-          class="flex flex-col border border-gray-200 shadow-sm rounded-xl top-1/4 right-20 md:p-5 w-10 h-200 absolute bg-blue-600"
+          class="flex flex-col border border-gray-200 shadow-sm rounded-xl top-1/4 right-5 md:p-5 w-10 h-200 absolute bg-blue-600"
         ></div>
       </div>
     </div>
