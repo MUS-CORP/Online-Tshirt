@@ -1,22 +1,19 @@
 FROM node:16.17.0-alpine
 
 # Set working directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Install dependencies
 COPY package*.json ./
-RUN npm ci --production
+RUN npm config set legacy-peer-deps true
+RUN npm install
 
 # Copy app source code
 COPY . .
-
-# Build app
-RUN npm run build --production
-
 
 
 # Expose port
 EXPOSE 3333
 
 # Start app
-CMD ["node", "./build/server.js"]
+CMD npm run dev
