@@ -15,7 +15,18 @@
     </div>
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-      <form class="space-y-6" action="" method="POST">
+      <progress
+        v-if="form.progress"
+        :value="form.progress.percentage"
+        max="100"
+      >
+        {{ form.progress.percentage }}%
+      </progress>
+      <form
+        class="space-y-6"
+        @submit.prevent="submitForm(form)"
+        enctype="multipart/form-data"
+      >
         <div>
           <label
             for="email"
@@ -24,8 +35,9 @@
           >
           <div class="mt-2">
             <input
-              id="email"
+              id="name"
               name="name"
+              v-model="form.username"
               type="text"
               autocomplete="email"
               required
@@ -43,6 +55,7 @@
             <input
               id="email"
               name="email"
+              v-model="form.email"
               type="email"
               autocomplete="email"
               required
@@ -61,6 +74,7 @@
           <div class="mt-2">
             <input
               id="password"
+              v-model="form.password"
               name="password"
               type="password"
               autocomplete="current-password"
@@ -79,6 +93,7 @@
           </div>
           <div class="mt-2">
             <input
+              v-model="form.passwordConfirmation"
               id="password"
               name="password"
               type="password"
@@ -111,10 +126,52 @@
 </template>
 
 <script>
+import axios from "axios";
+import { useForm } from "@inertiajs/vue3";
 import { Link } from "@inertiajs/vue3";
 export default {
   components: {
     Link,
+  },
+  data() {
+    return {
+      form: useForm({
+        username: "",
+        email: "",
+        password: "",
+        passwordConfirmation: "",
+      }),
+    };
+  },
+  methods: {
+    // submitForm() {
+    //   await Inertia.post('/api/PostRegister', form);
+    // },
+    submitForm(form) {
+      form.post("/api/PostRegister", {
+        preserveScroll: true,
+        onSuccess: () => form.reset("password", "passwordConfirmation"),
+      });
+      // axios
+      //   .post("http://localhost:3333/api/PostRegister", this.form, {
+      //     headers: {
+      //       "Content-Type": "multipart/form-data",
+      //     },
+      //   })
+      //   .then((response) => {
+      //     setTimeout(() => {
+      //       console.log("sukses");
+      //       // window.location.href = `/claim/claimdetails/${id}`;
+      //     }, 2000);
+
+      //     // setTimeout(() => {
+      //     //   this.toast.success("Berhasil di kirim");
+      //     // }, 1000);
+      //   })
+      //   .catch((error) => {
+      //     console.error(error);
+      //   });
+    },
   },
 };
 </script>

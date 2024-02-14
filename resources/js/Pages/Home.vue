@@ -1,6 +1,6 @@
 <template>
   <div ref="container">
-    <Navbar />
+    <Navbar :AuthCheck="this.AuthCheck" />
     <HeroSection />
     <Section2 />
     <Section3 />
@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import Navbar from "../Components/Navbar.vue";
 import HeroSection from "../Components/HeroSection.vue";
 import Section2 from "../Components/Section2.vue";
@@ -21,6 +22,11 @@ import { Link } from "@inertiajs/vue3";
 
 // import locomotiveScroll from "locomotive-scroll";
 export default {
+  data() {
+    return {
+      AuthCheck: "",
+    };
+  },
   components: {
     Navbar,
     HeroSection,
@@ -28,6 +34,24 @@ export default {
     Section3,
     Section4,
     Footer,
+  },
+  mounted() {
+    const updateAuthStatus = () => {
+      axios
+        .get("/api/cekLogin")
+        .then((response) => {
+          this.AuthCheck = response.data;
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+    };
+    updateAuthStatus();
+    this.intervalId = setInterval(updateAuthStatus, 1000);
+  },
+
+  beforeDestroy() {
+    clearInterval(this.intervalId);
   },
 };
 </script>

@@ -15,7 +15,7 @@
     </div>
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-      <form class="space-y-6" action="" method="POST">
+      <form class="space-y-6" @submit.prevent="submitForm(form)">
         <div>
           <label
             for="email"
@@ -24,6 +24,7 @@
           >
           <div class="mt-2">
             <input
+              v-model="form.email"
               id="email"
               name="email"
               type="email"
@@ -51,6 +52,7 @@
           </div>
           <div class="mt-2">
             <input
+              v-model="form.password"
               id="password"
               name="password"
               type="password"
@@ -84,7 +86,36 @@
 </template>
 
 <script>
+import axios from "axios";
+import { useForm } from "@inertiajs/vue3";
+import { Link } from "@inertiajs/vue3";
 export default {
   components: {},
+  data() {
+    return {
+      AuthCheck: "",
+      form: useForm({
+        email: "",
+        password: "",
+      }),
+    };
+  },
+  mounted() {
+    axios
+      .get("/api/cekLogin")
+      .then((response) => {
+        this.AuthCheck = response.data;
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  },
+  methods: {
+    submitForm(form) {
+      form.post("/api/PostLogin", {
+        preserveScroll: true,
+      });
+    },
+  },
 };
 </script>

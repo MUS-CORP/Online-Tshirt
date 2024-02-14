@@ -75,6 +75,7 @@
             >
           </div>
           <inertia-link
+            v-if="this.AuthCheck != 'Pengguna sudah login'"
             href="/login"
             class="flex text-xl items-center gap-x-2 font-medium text-black/[.8] hover:text-black sm:border-white/[.3] sm:my-6 sm:ps-6"
           >
@@ -95,6 +96,32 @@
             </svg>
             Log in
           </inertia-link>
+          <form
+            @submit.prevent="submitForm(form)"
+            v-if="this.AuthCheck != 'Pengguna belum login'"
+          >
+            <button
+              type="submit"
+              class="flex text-xl items-center gap-x-2 font-medium text-black/[.8] hover:text-black sm:border-white/[.3] sm:my-6 sm:ps-6"
+            >
+              <svg
+                class="flex-shrink-0 w-4 h-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              Log out
+            </button>
+          </form>
         </div>
       </div>
     </nav>
@@ -102,7 +129,20 @@
 </template>
 
 <script>
+import { useForm } from "@inertiajs/vue3";
 export default {
-  components: {},
+  props: ["AuthCheck"],
+  data() {
+    return {
+      form: useForm({}),
+    };
+  },
+  methods: {
+    submitForm(form) {
+      form.post("/logout", {
+        preserveScroll: true,
+      });
+    },
+  },
 };
 </script>

@@ -24,9 +24,20 @@ Route.get('/', async ({ inertia }) => {
   return inertia.render('Home')
 })
 Route.get('/api/GetDataBaju', 'PostBajuController.GetDataBaju');
+Route.post('/api/PostRegister', 'AuthController.postRegister');
+Route.post('/api/PostLogin', 'AuthController.PostLogin');
+Route.get('/api/cekLogin', 'AuthController.cekLogin');
+
 Route.get('/welcome', async ({ view }) => {
   return view.render('welcome')
 })
+Route.group(() => {
+  Route.post('/logout', async ({ auth, response }) => {
+    await auth.use('web').logout()
+    response.redirect().toRoute('/')
+  })
+}).middleware('auth:web')
+
 Route.get('/login', async ({ inertia }) => {
   return inertia.render('Auth/Login')
 })

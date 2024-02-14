@@ -6,7 +6,8 @@
     "@adonisjs/repl/build/commands",
     "@eidellev/inertia-adonisjs/build/commands",
     "@adonisjs/bouncer/build/commands",
-    "@adonisjs/lucid/build/commands"
+    "@adonisjs/lucid/build/commands",
+    "@verful/notifications/build/commands"
   ],
   "exceptionHandlerNamespace": "App/Exceptions/Handler",
   "aliases": {
@@ -35,7 +36,8 @@
     "@eidellev/inertia-adonisjs",
     "@adonisjs/bouncer",
     "@adonisjs/lucid",
-    "@adonisjs/auth"
+    "@adonisjs/auth",
+    "@verful/notifications"
   ],
   "metaFiles": [
     {

@@ -45,16 +45,20 @@
     "@adonisjs/vite": "^2.0.2",
     "@eidellev/inertia-adonisjs": "^8.1.0",
     "@inertiajs/vue3": "^1.0.14",
+    "@verful/notifications": "^2.3.0",
     "@vue/server-renderer": "^3.4.15",
+    "axios": "^1.6.7",
     "gsap": "^3.12.5",
     "locomotive-scroll": "^4.1.4",
     "luxon": "^3.4.4",
     "mysql2": "^3.7.1",
+    "phc-argon2": "^1.1.4",
     "preline": "^2.0.3",
     "proxy-addr": "^2.0.7",
     "reflect-metadata": "^0.2.1",
     "source-map-support": "^0.5.21",
     "vue": "^3.4.15",
+    "vue-axios": "^3.5.2",
     "webpack-node-externals": "^3.0.0"
   }
 }

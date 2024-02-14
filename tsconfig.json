@@ -36,7 +36,8 @@
       "@eidellev/inertia-adonisjs",
       "@adonisjs/bouncer",
       "@adonisjs/lucid",
-      "@adonisjs/auth"
+      "@adonisjs/auth",
+      "@verful/notifications"
     ]
   }
 }
