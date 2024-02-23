@@ -1,28 +1,38 @@
 <template>
   <section id="home" class="relative">
-    <div
+    <!-- <div
       ref="elementKotak4"
-      class="flex flex-col border border-gray-200 shadow-sm rounded-xl top-10 left-20 md:p-5 w-10 h-100 absolute bg-blue-600"
-    ></div>
+      class="flex flex-col border max-[768px]:hidden border-gray-200 shadow-sm rounded-xl top-10 left-20 md:p-5 w-10 h-100 absolute bg-blue-600"
+    ></div> -->
     <div
       class="m-5 bg-red-400 border-radius=34% 66% 33% 67% / 55% 3% 97% 45%"
     ></div>
     <div class="container overflow-hidden">
-      <div class="grid grid-cols-2 items-center justify-center h-screen">
-        <div
+      <div
+        class="flex flex-col md:flex-row max-[512px]:flex-wrap-reverse items-center justify-center h-screen"
+      >
+        <!-- <div
           ref="elementKotak3"
           class="flex flex-col border border-gray-200 shadow-sm rounded-xl right-20 md:p-5 w-10 h-100 absolute bg-blue-600"
-        ></div>
-        <div class="flex-col">
-          <h1 class="font-extrabold leading-relaxed text-7xl my-5 block">
+        ></div> -->
+        <div class="flex flex-col">
+          <h1
+            class="font-extrabold leading-relaxed text-7xl my-5 block"
+            data-aos="fade-right"
+            data-aos-delay="150"
+          >
             Express Your Style, Wear Your Passion
           </h1>
-          <h2 class="text-lg mb-10 text-slate-500 font-medium leading-relaxed">
+          <h2
+            class="text-lg mb-10 text-slate-500 font-medium leading-relaxed"
+            data-aos="fade-right"
+            data-aos-delay="300"
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quos
             tempore, molestiae animi eveniet porro sit unde assumenda. Impedit,
             voluptatum.
           </h2>
-          <div class="mt-5">
+          <div class="mt-5" data-aos="zoom-in" data-aos-delay="500">
             <button
               type="button"
               class="py-5 px-20 hover:scale-75 transition duration-300 inline-flex items-center gap-x-2 text-md font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
@@ -31,10 +41,10 @@
             </button>
           </div>
         </div>
-        <div class="w-full myElement" ref="myElement">
+        <div class="w-full myElement" ref="myElement" data-aos="fade-left">
           <div class="relative box">
-            <img class="w-1/2 mx-auto" src="/assets/images/hero1.png" />
-            <div class="absolute -bottom-0 -z-10 left-1/2 -translate-x-1/2">
+            <img class="sm:w-1/2 mx-auto" src="/assets/images/hero1.png" />
+            <div class="absolute -bottom-0 -z-10 left-1/2 sm:-translate-x-1/2">
               <svg
                 width="500"
                 height="500"

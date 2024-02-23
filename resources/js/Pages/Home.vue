@@ -1,5 +1,5 @@
 <template>
-  <div ref="container">
+  <div ref="container" class="overflow-hidden">
     <Navbar :AuthCheck="this.AuthCheck" />
     <HeroSection />
     <Section2 />

@@ -10,7 +10,7 @@
           class="flex-none font-semibold text-black"
           href="#"
           aria-label="Brand"
-          ><img class="w-28 h-auto" src="/assets/images/MUSTORE.png" alt=""
+          ><img class="w-16 h-auto" src="/assets/images/MUSTORE.png" alt=""
         /></a>
         <div class="sm:hidden">
           <button
@@ -61,12 +61,17 @@
         <div
           class="flex flex-col gap-y-4 gap-x-0 mt-5 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:ps-7"
         >
-          <div class="mx-auto gap-x-4 text-xl">
+          <div class="mx-auto text-sm gap-x-4">
             <a
-              class="font-medium text-black px-5 sm:py-6"
+              class="font-medium text-black sm:py-6"
               href="#"
               aria-current="page"
               >Home</a
+            >
+            <a
+              class="font-medium text-black/[.8] px-5 hover:text-black sm:py-6"
+              href="#secition2"
+              >About</a
             >
             <a
               class="font-medium text-black/[.8] hover:text-black sm:py-6"
@@ -77,7 +82,7 @@
           <inertia-link
             v-if="this.AuthCheck != 'Pengguna sudah login'"
             href="/login"
-            class="flex text-xl items-center gap-x-2 font-medium text-black/[.8] hover:text-black sm:border-white/[.3] sm:my-6 sm:ps-6"
+            class="flex text-sm items-center gap-x-2 font-medium text-black/[.8] hover:text-black sm:border-white/[.3] sm:my-6 sm:ps-6"
           >
             <svg
               class="flex-shrink-0 w-4 h-4"

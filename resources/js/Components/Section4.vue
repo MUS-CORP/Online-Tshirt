@@ -28,10 +28,8 @@
                 </svg>
               </span>
               <!-- Isi card di sini -->
-              <h2 class="text-2xl font-bold text-white">
-                Produk 100% Original
-              </h2>
-              <p class="text-white">
+              <h2 class="text-xl font-bold text-white">Produk 100% Original</h2>
+              <p class="text-white text-sm">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Reprehenderit odio vero rerum eum molestias at!.
               </p>
@@ -58,10 +56,10 @@
                 </svg>
               </span>
               <!-- Isi card di sini -->
-              <h2 class="text-2xl font-bold text-white">
+              <h2 class="text-xl font-bold text-white">
                 Pengiriman Cepat dan Aman
               </h2>
-              <p class="text-white">
+              <p class="text-white text-sm">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Reprehenderit odio vero rerum eum molestias at!.
               </p>
@@ -87,8 +85,8 @@
                 </svg>
               </span>
               <!-- Isi card di sini -->
-              <h2 class="text-2xl font-bold text-white">Tukar Ukuran</h2>
-              <p class="text-white">
+              <h2 class="text-xl font-bold text-white">Tukar Ukuran</h2>
+              <p class="text-white text-sm">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Reprehenderit odio vero rerum eum molestias at!.
               </p>
@@ -100,7 +98,7 @@
 
     <div
       ref="elementKotak"
-      class="flex flex-col border border-gray-200 shadow-sm rounded-xl py-64 md:p-5 -bottom-80 left-9 w-10 h-100 absolute bg-blue-600"
+      class="flex flex-col border border-gray-200 shadow-sm rounded-xl py-64 md:p-5 max-sm:hidden -bottom-80 left-9 w-10 h-100 absolute bg-blue-600"
     ></div>
   </section>
 </template>

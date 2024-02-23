@@ -1,10 +1,5 @@
 <template>
   <section id="secition2" class="relative mb-90">
-    <div
-      ref="elementKotak"
-      class="flex flex-col border border-gray-200 shadow-sm rounded-xl p-4 md:p-5 left-9 w-10 h-100 absolute bg-blue-600"
-    ></div>
-
     <div class="container mb-5">
       <div class="text-5xl text-center mb-10">
         <span class="font-bold px-5 border-t border-cyan-700">New</span
@@ -12,7 +7,11 @@
       </div>
 
       <div class="grid grid-cols-3 gap-x-5">
-        <div class="flex flex-col relative overflow-hidden group">
+        <div
+          class="flex flex-col relative overflow-hidden group"
+          data-aos="zoom-in-up"
+          data-aos-delay="400"
+        >
           <a
             class="group-hover:blur-sm group-hover:shadow-lg group-hover:transition delay-150 duration-300 bg-white border shadow-sm rounded-xl"
             href="#"
@@ -44,7 +43,11 @@
             </a>
           </div>
         </div>
-        <div class="flex flex-col relative overflow-hidden group">
+        <div
+          class="flex flex-col relative overflow-hidden group"
+          data-aos="zoom-in-up"
+          data-aos-delay="300"
+        >
           <a
             class="group-hover:blur-sm group-hover:shadow-lg group-hover:transition delay-150 duration-300 bg-white border shadow-sm rounded-xl"
             href="#"
@@ -74,7 +77,11 @@
             </a>
           </div>
         </div>
-        <div class="flex flex-col relative overflow-hidden group">
+        <div
+          class="flex flex-col relative overflow-hidden group"
+          data-aos="zoom-in-up"
+          data-aos-delay="200"
+        >
           <a
             class="group-hover:blur-sm group-hover:shadow-lg group-hover:transition delay-150 duration-300 bg-white border shadow-sm rounded-xl"
             href="#"
@@ -106,10 +113,6 @@
             </a>
           </div>
         </div>
-        <div
-          ref="elementKotak2"
-          class="flex flex-col border border-gray-200 shadow-sm rounded-xl top-1/4 right-5 md:p-5 w-10 h-200 absolute bg-blue-600"
-        ></div>
       </div>
     </div>
   </section>
@@ -124,20 +127,35 @@ export default {
     gsap.registerPlugin(ScrollTrigger);
 
     this.setupAnimation(this.$refs.elementKotak);
-    this.setupAnimation(this.$refs.elementKotak2);
+    this.setupAnimation2(this.$refs.elementKotak2);
   },
   methods: {
     setupAnimation(value) {
       gsap
         .timeline({
           scrollTrigger: {
+            x: -100,
             scrub: 2,
             trigger: value,
           },
         })
         .to(value, {
           duration: 1,
-          rotation: 360,
+          x: 100,
+        });
+    },
+    setupAnimation2(value) {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            x: -100,
+            scrub: 2,
+            trigger: value,
+          },
+        })
+        .to(value, {
+          duration: 1,
+          x: -100,
         });
     },
   },

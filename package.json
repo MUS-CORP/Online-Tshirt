@@ -47,6 +47,7 @@
     "@inertiajs/vue3": "^1.0.14",
     "@verful/notifications": "^2.3.0",
     "@vue/server-renderer": "^3.4.15",
+    "aos": "^2.3.4",
     "axios": "^1.6.7",
     "gsap": "^3.12.5",
     "locomotive-scroll": "^4.1.4",
