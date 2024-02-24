@@ -6,7 +6,7 @@
       >
         <!-- Grid -->
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
-          <div class="col-span-full lg:col-span-1">
+          <div class="col-span-full max-sm:mx-auto lg:col-span-1">
             <a
               class="flex-none font-semibold text-black"
               href="#"

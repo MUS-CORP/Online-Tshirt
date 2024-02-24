@@ -1,15 +1,21 @@
 <template>
   <section id="secition2" class="relative mb-96">
     <div class="relative">
-      <div class="">
+      <div class="max-sm:hidden">
         <img
           src="/assets/images/bgSection4.jpg"
           class="w-full h-full brightness-50 bg-cover bg-center object-cover object-center"
           alt=""
         />
       </div>
-      <div class="grid grid-cols-3 gap-4 absolute inset-0">
-        <div class="col-span-1 mx-6 hover:scale-105 transition duration-300">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 max-sm:mb-60 gap-4 md:absolute inset-0"
+      >
+        <div
+          class="col-span-1 mx-6 hover:scale-105 transition duration-300"
+          data-aos="zoom-in"
+          data-aos-delay="150"
+        >
           <div class="flex items-center justify-center h-full">
             <div
               class="bg-opacity-75 text-center space-y-7 bg-gray-800 px-6 py-10 rounded-lg"
@@ -36,7 +42,11 @@
             </div>
           </div>
         </div>
-        <div class="col-span-1 mx-6 hover:scale-105 transition duration-300">
+        <div
+          class="col-span-1 mx-6 hover:scale-105 transition duration-300"
+          data-aos="zoom-in"
+          data-aos-delay="250"
+        >
           <div class="flex items-center justify-center h-full">
             <div
               class="bg-opacity-75 text-center space-y-7 bg-gray-800 px-6 py-10 rounded-lg"
@@ -66,7 +76,11 @@
             </div>
           </div>
         </div>
-        <div class="col-span-1 mx-6 hover:scale-105 transition duration-300">
+        <div
+          class="col-span-1 mx-6 hover:scale-105 transition duration-300"
+          data-aos="zoom-in"
+          data-aos-delay="450"
+        >
           <div class="flex items-center justify-center h-full">
             <div
               class="bg-opacity-75 text-center space-y-7 bg-gray-800 px-6 py-10 rounded-lg"
@@ -98,7 +112,7 @@
 
     <div
       ref="elementKotak"
-      class="flex flex-col border border-gray-200 shadow-sm rounded-xl py-64 md:p-5 max-sm:hidden -bottom-80 left-9 w-10 h-100 absolute bg-blue-600"
+      class="flex flex-col border border-gray-200 shadow-sm rounded-xl py-64 max-sm:p-5 sm:p-5 -bottom-80 left-9 w-10 h-100 absolute bg-blue-600"
     ></div>
   </section>
 </template>

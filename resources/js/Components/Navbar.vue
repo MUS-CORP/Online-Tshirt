@@ -75,7 +75,8 @@
             >
             <a
               class="font-medium text-black/[.8] hover:text-black sm:py-6"
-              href="#secition2"
+              @click="scrollToSection2"
+              href="#"
               >Product</a
             >
           </div>
@@ -136,7 +137,7 @@
 <script>
 import { useForm } from "@inertiajs/vue3";
 export default {
-  props: ["AuthCheck"],
+  props: ["AuthCheck", "scrollToSection2"],
   data() {
     return {
       form: useForm({}),

@@ -1,15 +1,23 @@
 <template>
   <div ref="container" class="overflow-hidden">
-    <Navbar :AuthCheck="this.AuthCheck" />
-    <HeroSection />
-    <Section2 />
-    <Section3 />
-    <Section4 />
-    <Footer />
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <Navbar
+          :AuthCheck="this.AuthCheck"
+          :scrollToSection2="scrollToSection2"
+        />
+        <HeroSection />
+        <Section2 />
+        <Section3 />
+        <Section4 />
+        <Footer />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import gsap from "gsap";
 import axios from "axios";
 import Navbar from "../Components/Navbar.vue";
 import HeroSection from "../Components/HeroSection.vue";
@@ -36,6 +44,15 @@ export default {
     Footer,
   },
   mounted() {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollSmoother);
+    ScrollTrigger.normalizeScroll(true);
+    let smoother = ScrollSmoother.create({
+      smooth: 2,
+      effects: true,
+      normalizeScroll: true,
+    });
+    this.scrollToSection2(smoother);
     const updateAuthStatus = () => {
       axios
         .get("/api/cekLogin")
@@ -49,7 +66,11 @@ export default {
     updateAuthStatus();
     this.intervalId = setInterval(updateAuthStatus, 1000);
   },
-
+  methods: {
+    scrollToSection2(smoother) {
+      smoother.scrollTo("#section2", true, "center center");
+    },
+  },
   beforeDestroy() {
     clearInterval(this.intervalId);
   },

@@ -18,14 +18,20 @@
     </div>
     <div class="container my-64">
       <div
-        class="flex flex-col bg-blue-600 border mb-40 py-20 px-32 border-gray-200 shadow-sm rounded-2xl"
+        class="flex flex-col bg-blue-600 border mb-40 py-20 md:px-32 px-10 border-gray-200 shadow-sm rounded-2xl"
       >
-        <div class="grid grid-cols-2">
+        <div class="grid grid-cols-1 md:grid-cols-2">
           <div class="flex flex-col gap-y-10 justify-center h-100">
-            <span class="font-bold text-2xl text-white"
+            <span
+              class="font-bold text-2xl text-white"
+              data-aos="flip-up"
+              data-aos-delay="150"
               >Do you have a new question?</span
             >
-            <span class="text-white text-md flex justify-items-center"
+            <span
+              class="text-white text-md flex justify-items-center"
+              data-aos="zoom-out-right"
+              data-aos-delay="250"
               >Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
               omnis dolor fugiat cum doloribus amet eum nemo aspernatur ea
               consequatur.</span
@@ -34,14 +40,16 @@
               <button
                 type="button"
                 class="py-5 px-8 text-md font-semibold rounded-lg border border-transparent bg-white text-black hover:scale-75 transition duration-300 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                data-aos="zoom-in"
+                data-aos-delay="350"
               >
                 Get Started
               </button>
             </div>
           </div>
-          <div class="" ref="promotionImage">
+          <div class="max-sm:mt-16" ref="promotionImage">
             <img
-              class="flex justify-items-center ml-auto px w-48 hover:rotate-180 hover:-scale-x-105 transition duration-500 -rotate-6"
+              class="flex justify-items-center max-sm:mx-auto md:ml-auto px w-48 hover:rotate-180 hover:-scale-x-105 transition duration-500 -rotate-6"
               src="/assets/images/promotionImage.png"
               alt=""
             />

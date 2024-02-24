@@ -1,12 +1,14 @@
 <template>
-  <section id="secition2" class="relative mb-90">
+  <section id="section2" class="relative mb-90">
     <div class="container mb-5">
       <div class="text-5xl text-center mb-10">
         <span class="font-bold px-5 border-t border-cyan-700">New</span
         ><span>T-shirt</span>
       </div>
 
-      <div class="grid grid-cols-3 gap-x-5">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-x-5"
+      >
         <div
           class="flex flex-col relative overflow-hidden group"
           data-aos="zoom-in-up"

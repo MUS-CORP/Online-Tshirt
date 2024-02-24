@@ -1,5 +1,5 @@
 <template>
-  <section id="home" class="relative">
+  <section id="home" class="relative mb-20">
     <!-- <div
       ref="elementKotak4"
       class="flex flex-col border max-[768px]:hidden border-gray-200 shadow-sm rounded-xl top-10 left-20 md:p-5 w-10 h-100 absolute bg-blue-600"
@@ -9,7 +9,7 @@
     ></div>
     <div class="container overflow-hidden">
       <div
-        class="flex flex-col md:flex-row max-[512px]:flex-wrap-reverse items-center justify-center h-screen"
+        class="flex flex-col md:flex-row max-[512px]:flex-wrap-reverse items-center justify-center"
       >
         <!-- <div
           ref="elementKotak3"
@@ -17,7 +17,7 @@
         ></div> -->
         <div class="flex flex-col">
           <h1
-            class="font-extrabold leading-relaxed text-7xl my-5 block"
+            class="font-extrabold leading-relaxed text-7xl max-sm:text-6xl max-sm:tracking-wide my-5 block"
             data-aos="fade-right"
             data-aos-delay="150"
           >
@@ -35,19 +35,25 @@
           <div class="mt-5" data-aos="zoom-in" data-aos-delay="500">
             <button
               type="button"
-              class="py-5 px-20 hover:scale-75 transition duration-300 inline-flex items-center gap-x-2 text-md font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+              class="py-5 px-20 hover:scale-105 transition duration-300 inline-flex items-center gap-x-2 text-md font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
             >
               Get Started
             </button>
           </div>
         </div>
-        <div class="w-full myElement" ref="myElement" data-aos="fade-left">
-          <div class="relative box">
-            <img class="sm:w-1/2 mx-auto" src="/assets/images/hero1.png" />
-            <div class="absolute -bottom-0 -z-10 left-1/2 sm:-translate-x-1/2">
+        <div
+          class="myElement w-full scale-50 place-self-center pt-5 px-4 top-0 max-sm:mt-36 opacity-100"
+          ref="myElement"
+        >
+          <div class="sm:relative">
+            <img
+              class="w-1/2 max-sm:w-auto max-w-full mx-auto"
+              src="/assets/images/hero1.png"
+            />
+            <div class="absolute -bottom-0 -z-10 left-1/3 -translate-x-1/2">
               <svg
-                width="500"
-                height="500"
+                width="150%"
+                height="150%"
                 viewBox="0 0 200 200"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -79,8 +85,8 @@ export default {
         },
       })
       .to(this.$refs.myElement, {
-        duration: 1,
-        x: 100,
+        duration: 2,
+        scale: 1.2,
       });
     this.setupAnimation(this.$refs.elementKotak3);
     this.setupAnimation(this.$refs.elementKotak4);
