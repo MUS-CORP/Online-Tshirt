@@ -1,5 +1,5 @@
 <template>
-  <section id="home" class="relative mb-20">
+  <section id="home" class="relative my-20">
     <!-- <div
       ref="elementKotak4"
       class="flex flex-col border max-[768px]:hidden border-gray-200 shadow-sm rounded-xl top-10 left-20 md:p-5 w-10 h-100 absolute bg-blue-600"
@@ -17,14 +17,14 @@
         ></div> -->
         <div class="flex flex-col">
           <h1
-            class="font-extrabold leading-relaxed text-7xl max-sm:text-6xl max-sm:tracking-wide my-5 block"
+            class="font-extrabold leading-relaxed text-6xl max-sm:text-6xl max-sm:tracking-wide my-5 block"
             data-aos="fade-right"
             data-aos-delay="150"
           >
             Express Your Style, Wear Your Passion
           </h1>
           <h2
-            class="text-lg mb-10 text-slate-500 font-medium leading-relaxed"
+            class="text-md mb-10 text-slate-500 font-medium leading-relaxed"
             data-aos="fade-right"
             data-aos-delay="300"
           >

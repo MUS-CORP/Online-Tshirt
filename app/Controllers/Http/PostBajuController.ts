@@ -1,50 +1,65 @@
 
 import Database from '@ioc:Adonis/Lucid/Database'
-import Post from 'App/Models/Post';
-import View from '@ioc:Adonis/Core/View'
+import Application from '@ioc:Adonis/Core/Application';
+import Product from 'App/Models/Product';
 export default class PostBajuController {  
   public async GetDataBaju({response} ) {
-    const posts = await Database
+    const Product = await Database
     .query()
-    .from('posts')
+    .from('products')
     .select('*')
-    return response.json([posts]);
+    return response.json(Product);
   }
-  
-  public async create({view}) {
-    return view.render('Post.create');
-  }
-  public async show({view, params}) {
-    const dataPost = await Post.findOrFail(params.id)
-    return view.render('Post.show',{dataPost: dataPost});
-  }
-  public async store({request, session, response}) {
-
+    
+  public async store({request, session, response}) {   
+    const foto = request.file('foto');
+    await foto.move(Application.makePath('public/assets/uploads'), {
+      name: foto.clientName, 
+      overwrite: true
+    });
+   
     await Database
       .insertQuery() 
-      .table('posts')
-      .insert({ title: request.input('title'), content: request.input('content') })
+      .table('products')
+      .insert({ name: request.input('name'), harga: request.input('harga'), deskripsi: request.input('deskripsi'), foto: foto.clientName })
       session.flash({ notification: 'Data Berhasil Disimpan!' })
-      response.redirect().toRoute('home')
+      return response.redirect('/Product');
   }
-  public async ubah({view, params}) {
-    const dataPost = await Post.findOrFail(params.id)
-    return view.render('Post.ubah',{dataPost: dataPost});
+  public async GetDetailBaju({ inertia, params}) {
+    const dataDetailProduct = await Product.findOrFail(params.id);
+    return inertia.render('Admin/Product/ubahProduct', { dataDetailProduct });  
   }
-  public async Update({view,params, request, session, response}) {
+  public async updateBaju({response,inertia, params, request, session}) {    
     const id    = params.id
-  const post  = await Post.findOrFail(id)
+    const ProductData  = await Product.findOrFail(id)
+    ProductData.name    = request.input('name')
+    ProductData.harga  = request.input('harga')
+    ProductData.deskripsi  = request.input('deskripsi')
+    if(request.file('foto') != null) {
+      const foto = request.file('foto')
+      await foto.move(Application.publicPath('assets/uploads'), {
+        name: foto.clientName, 
+        overwrite: true
+      });      
+      if (foto.fileName) {        
+        const fs = require('fs')
+        fs.unlinkSync(Application.publicPath('assets/uploads', ProductData.foto))
+        ProductData.foto = foto.fileName;
+      } else {          
+          return response.redirect('back');
+      }
+    }
+    await ProductData.save()        
 
-    post.title    = request.input('title')
-    post.content  = request.input('content')
-    await post.save()
-    session.flash({ notification: 'Data Berhasil Disimpan!' })    
-    return view.render('Post.ubah',{dataPost: post});
+    
+    return response.json('anjay');
   }
-  public async destroy({view,response, params}) {
-    const dataPost = await Post.findOrFail(params.id)
-    await dataPost.delete()
-    response.redirect().toRoute('home')
+  public async deleteBaju({response, params}) {
+    const dataProduct = await Product.findOrFail(params.id)
+    const fs = require('fs')
+    fs.unlinkSync(Application.publicPath('assets/uploads', dataProduct.foto))
+    await dataProduct.delete()
+    return response.redirect('/Product');
   }
 }
 

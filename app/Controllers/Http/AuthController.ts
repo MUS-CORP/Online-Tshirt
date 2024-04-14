@@ -1,5 +1,6 @@
 // import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 // import { schema, rules } from '@ioc:Adonis/Core/Validator'
+import Database from '@ioc:Adonis/Lucid/Database'
 import User from "App/Models/User";
 export default class AuthController {
     public async postRegister({request,response ,auth}) {
@@ -23,13 +24,13 @@ export default class AuthController {
         
         const { email, password} = request.body()
       
-        try {
-          await auth.use('web').attempt(email, password)
-          return response.redirect().toRoute('/')
+        try {         
+        await auth.use('web').attempt(email, password)
+      
         } catch {
           return response.badRequest('Invalid credentials')
         }
-     
+        return response.redirect().toRoute('/dashboard')
       }
 
       public async cekLogin({ auth, response }) {
@@ -42,4 +43,11 @@ export default class AuthController {
           return response.send('Pengguna belum login');
         }
       }
+      public async cekCountUser({ response }) {
+        const countUsers = await Database
+            .from('users')
+            .count('* as total_users');
+    
+        return response.json(countUsers[0]);
+    }
 }

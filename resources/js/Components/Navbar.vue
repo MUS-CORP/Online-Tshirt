@@ -108,7 +108,7 @@
           >
             <button
               type="submit"
-              class="flex text-xl items-center gap-x-2 font-medium text-black/[.8] hover:text-black sm:border-white/[.3] sm:my-6 sm:ps-6"
+              class="flex text-sm items-center gap-x-2 font-medium text-black/[.8] hover:text-black sm:border-white/[.3] sm:my-6 sm:ps-6"
             >
               <svg
                 class="flex-shrink-0 w-4 h-4"

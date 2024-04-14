@@ -83,6 +83,9 @@
       </p>
     </div>
   </div>
+  <div>
+    <div v-if="error" class="alert alert-danger">{{ error }}</div>
+  </div>
 </template>
 
 <script>
@@ -91,15 +94,18 @@ import { useForm } from "@inertiajs/vue3";
 import { Link } from "@inertiajs/vue3";
 export default {
   components: {},
+
   data() {
     return {
       AuthCheck: "",
+      error: null,
       form: useForm({
         email: "",
         password: "",
       }),
     };
   },
+
   mounted() {
     axios
       .get("/api/cekLogin")

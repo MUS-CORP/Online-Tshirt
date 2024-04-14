@@ -44,11 +44,12 @@
     "@adonisjs/view": "^6.2.0",
     "@adonisjs/vite": "^2.0.2",
     "@eidellev/inertia-adonisjs": "^8.1.0",
-    "@inertiajs/vue3": "^1.0.14",
+    "@inertiajs/vue3": "^1.0.15",
     "@verful/notifications": "^2.3.0",
     "@vue/server-renderer": "^3.4.15",
     "aos": "^2.3.4",
     "axios": "^1.6.7",
+    "flowbite": "^2.3.0",
     "gsap": "^3.12.5",
     "locomotive-scroll": "^4.1.4",
     "luxon": "^3.4.4",
@@ -58,8 +59,11 @@
     "proxy-addr": "^2.0.7",
     "reflect-metadata": "^0.2.1",
     "source-map-support": "^0.5.21",
+    "sweetalert2": "^11.10.7",
     "vue": "^3.4.15",
     "vue-axios": "^3.5.2",
+    "vue-sweetalert2": "^5.0.5",
+    "vuex": "^4.0.2",
     "webpack-node-externals": "^3.0.0"
   }
 }

@@ -2,6 +2,7 @@ module.exports = {
   content: [
     "./resources/**/*.{edge,js,ts,jsx,tsx,vue}",
     'node_modules/preline/dist/*.js',
+    "./node_modules/flowbite/**/*.js",
   ],
   theme: {
     extend: {
@@ -15,5 +16,5 @@ module.exports = {
     },
   },
   plugins: [
-    require('preline/plugin')],
+    require('preline/plugin'),   require('flowbite/plugin')],
 }
