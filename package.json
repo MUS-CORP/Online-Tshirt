@@ -47,6 +47,7 @@
     "@inertiajs/vue3": "^1.0.15",
     "@verful/notifications": "^2.3.0",
     "@vue/server-renderer": "^3.4.15",
+    "adonisjs-create-service": "github:hyungju/adonisjs-create-service",
     "aos": "^2.3.4",
     "axios": "^1.6.7",
     "flowbite": "^2.3.0",

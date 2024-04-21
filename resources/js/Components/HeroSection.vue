@@ -24,14 +24,11 @@
             Express Your Style, Wear Your Passion
           </h1>
           <h2
+            id="hero-desc"
             class="text-md mb-10 text-slate-500 font-medium leading-relaxed"
             data-aos="fade-right"
             data-aos-delay="300"
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quos
-            tempore, molestiae animi eveniet porro sit unde assumenda. Impedit,
-            voluptatum.
-          </h2>
+          ></h2>
           <div class="mt-5" data-aos="zoom-in" data-aos-delay="500">
             <button
               type="button"
@@ -73,9 +70,10 @@
 
 <script>
 import gsap from "gsap";
+import TextPlugin from "gsap/TextPlugin";
 export default {
   mounted() {
-    // Use GSAP to animate the element with a 1-second duration and slide it to the right
+    gsap.registerPlugin(TextPlugin);
     gsap.registerPlugin(ScrollTrigger);
     gsap
       .timeline({
@@ -88,6 +86,11 @@ export default {
         duration: 2,
         scale: 1.2,
       });
+    gsap.to("#hero-desc", {
+      duration: 3.5,
+      ease: "power1.in",
+      text: "Gaya yang Membuat Anda Bersinar, Dapatkan Pakaian yang Tak Tertandingi dalam Kualitas, Elegansi, dan Kenyamanan di Setiap Gerakan, Setiap Momen",
+    });
     this.setupAnimation(this.$refs.elementKotak3);
     this.setupAnimation(this.$refs.elementKotak4);
   },

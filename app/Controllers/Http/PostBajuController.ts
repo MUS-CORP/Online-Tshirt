@@ -1,14 +1,19 @@
 
 import Database from '@ioc:Adonis/Lucid/Database'
 import Application from '@ioc:Adonis/Core/Application';
+// import PostBajuService from 'App/Services/PostBajuService';
 import Product from 'App/Models/Product';
+
 export default class PostBajuController {  
+
+
   public async GetDataBaju({response} ) {
-    const Product = await Database
-    .query()
-    .from('products')
-    .select('*')
-    return response.json(Product);
+    
+    // const Product = this.PostBajuService.tes()
+    // console.log(Product)
+    const Products = await Product.all()
+    console.log(Products)
+    return response.json(Products)
   }
     
   public async store({request, session, response}) {   

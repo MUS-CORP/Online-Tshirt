@@ -37,7 +37,8 @@
     "@adonisjs/bouncer",
     "@adonisjs/lucid",
     "@adonisjs/auth",
-    "@verful/notifications"
+    "@verful/notifications",
+    "./providers/RepositoryProvider"
   ],
   "metaFiles": [
     {

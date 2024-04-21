@@ -12,6 +12,11 @@ module.exports = {
       },
       colors: {
         customBlue: '#40A2D8',
+        paleBlue: "#304057",
+        secondGray: "#6D6D6D",
+        secondBlack: "#151515",
+        linearBlue: "#cce4ff",
+        lightBlue: "#637C95",
       },
     },
   },

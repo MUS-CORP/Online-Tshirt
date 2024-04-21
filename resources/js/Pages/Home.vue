@@ -2,11 +2,15 @@
   <div ref="container" class="overflow-hidden">
     <div id="smooth-wrapper">
       <div id="smooth-content">
-        <Navbar
-          :AuthCheck="this.AuthCheck"
-          :scrollToSection2="scrollToSection2"
-        />
-        <HeroSection />
+        <section
+          class="mb-10 bg-gradient-to-b from-linearBlue/40 via-white pb-10 to-linearBlue/40"
+        >
+          <Navbar
+            :AuthCheck="this.AuthCheck"
+            :scrollToSection2="scrollToSection2"
+          />
+          <HeroSection />
+        </section>
         <Section2 />
         <Section3 />
         <Section4 />

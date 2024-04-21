@@ -30,6 +30,7 @@ Route.get('/api/cekLogin', 'AuthController.cekLogin');
 Route.get('/welcome', async ({ view }) => {
   return view.render('welcome')
 })
+Route.get('/api/GetDataBaju', 'PostBajuController.GetDataBaju');
 Route.group(() => {
   Route.post('/logout', async ({ auth, response }) => {
     await auth.use('web').logout()
@@ -46,7 +47,6 @@ Route.group(() => {
   })
  
 
-  Route.get('/api/GetDataBaju', 'PostBajuController.GetDataBaju');
   Route.get('/GetDetailBaju/:id', 'PostBajuController.GetDetailBaju');
   Route.post('/api/deleteBaju/:id', 'PostBajuController.deleteBaju');
   Route.put('/api/updateBaju/:id', 'PostBajuController.updateBaju');
