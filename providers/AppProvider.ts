@@ -1,16 +1,22 @@
 import type { ApplicationContract } from '@ioc:Adonis/Core/Application'
+import PostBajuRepository from 'App/Repositories/PostBajuRepository';
 import PostBajuService from 'App/Services/PostBajuService'
 export default class AppProvider {
   constructor (protected app: ApplicationContract) {
   }
 
   public register () {
-    // Register your own bindings
-    // this.app.container.singleton('app/Services/PostBajuService', () => new PostBajuService())
-    // this.app.container.singleton('App/Controllers/Http/Controllers/PostBajuController', () => {
-    //   const service = this.app.container.use('App/Controllers/Http/Services/PostBajuService')
-    //   return new PostBajuController(service)
-    // })
+   // Binding PostBajuRepository to IPostBajuRepository
+  //  this.app.container.singleton('App/Interfaces/PostBajuRepositoryInterface', () => {
+  //   return new PostBajuRepository();
+  // });
+
+  // // Binding PostBajuService
+  // this.app.container.singleton('App/Services/PostBajuService', () => {
+  //   const repo = this.app.container.use('App/Interfaces/PostBajuRepositoryInterface');
+  //   return new PostBajuService(repo);
+  // });
+  //  this.setupOrderBindings()
   }
 
   public async boot () {
@@ -40,7 +46,7 @@ export default class AppProvider {
       () => new PostBajuRepository(),
     )
 
-    this.app.container.singleton('App/Controllers/Http/Services/OrderService', () => {
+    this.app.container.bind('App/Controllers/Http/Services/PostBajuService', () => {
       const repo = this.app.container.use(
         'App/Interfaces/PostBajuRepositoryInterface',
       )
@@ -48,8 +54,8 @@ export default class AppProvider {
     })
 
     this.app.container.singleton('App/Controllers/Http/PostBajuController', () => {
-      const service = this.app.container.use('App/Services/PostBajuService')
-      return new PostBajuController(service)
+      const repo = this.app.container.use('App/Interfaces/OrderRepositoryInterface',)
+      return new PostBajuController(repo)
     })
   }
 }

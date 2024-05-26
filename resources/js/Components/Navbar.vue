@@ -48,34 +48,7 @@
                   ></i>
                 </span>
               </span>
-              <div id="dropdown" ref="dropdownRef">
-                <div v-if="showDropdown" class="absolute right-0 top-5">
-                  <div class="px-5 py-4 rounded-sm bg-white shadow-lg">
-                    <span class="flex gap-3 group items-center mb-2">
-                      <i
-                        class="fa-solid fa-cat group-hover:text-slate-500 duration-200 ease-in-out text-lg text-paleBlue"
-                      ></i>
-                      <p
-                        @click="scrollToAbout"
-                        class="text-lg text-paleBlue group-hover:text-slate-500 duration-200 ease-in-out font-Sawa"
-                      >
-                        Cats
-                      </p>
-                    </span>
-                    <span class="flex gap-3 group items-center">
-                      <i
-                        class="fa-solid fa-dog group-hover:text-slate-500 duration-200 ease-in-out text-lg text-paleBlue"
-                      ></i>
-                      <p
-                        @click="scrollToAbout"
-                        class="text-lg text-paleBlue group-hover:text-slate-500 duration-200 ease-in-out font-Sawa"
-                      >
-                        Dogs
-                      </p>
-                    </span>
-                  </div>
-                </div>
-              </div>
+              <div id="dropdown" ref="dropdownRef"></div>
             </li>
 
             <li @click.prevent>
@@ -83,13 +56,6 @@
                 href="#"
                 class="text-secondGray font-medium font-Sawa duration-300 ease-in-out hover:text-paleBlue"
                 >Community</a
-              >
-            </li>
-            <li @click.prevent>
-              <a
-                href="#"
-                class="text-secondGray font-medium font-Sawa duration-300 ease-in-out hover:text-paleBlue"
-                >Stories with pet</a
               >
             </li>
             <li @click.prevent>

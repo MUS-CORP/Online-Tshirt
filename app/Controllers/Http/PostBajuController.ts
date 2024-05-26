@@ -1,19 +1,20 @@
 
 import Database from '@ioc:Adonis/Lucid/Database'
 import Application from '@ioc:Adonis/Core/Application';
-// import PostBajuService from 'App/Services/PostBajuService';
+import PostBajuService from 'App/Services/PostBajuService';
 import Product from 'App/Models/Product';
+import { inject } from '@adonisjs/core/build/standalone';
+import PostBajuRepositoryInterface from 'App/Interfaces/PostBajuRepositoryInterface';
 
+@inject()
 export default class PostBajuController {  
+  constructor(private PostBajuRepositoryInterface: PostBajuRepositoryInterface ) {}    
 
 
   public async GetDataBaju({response} ) {
-    
-    // const Product = this.PostBajuService.tes()
-    // console.log(Product)
-    const Products = await Product.all()
-    console.log(Products)
-    return response.json(Products)
+    const Product = await this.PostBajuRepositoryInterface.getAllProducts()
+    console.log(Product)
+    return response.json(Product)
   }
     
   public async store({request, session, response}) {   
